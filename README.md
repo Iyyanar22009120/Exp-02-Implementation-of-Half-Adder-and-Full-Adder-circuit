@@ -34,30 +34,49 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 Connect the supply (+5V) to the circuit
 Switch ON the main switch
 If the output is 1, then the led glows.
-### 
-Program:
-/*
+### Program:
+```
 Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
 Developed by: S.IYYANAR
 RegisterNumber: 212222240036 
-*/
-Logic symbol & Truthtable
-HALF ADDER
+```
+## HALF ADDER
+```
+module half_adder(a,b,sum,carry);
+input a,b;
+output sum,carry;
+assign sum = (a^b);
+assign carry = (a&b);
+endmodule
+```
+## FULL ADDER
+```
+module full_adder (a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+assign sum = (a^b^c);
+assign carry = ((a&b)|(a^b)&c);
+endmodule
+```
+### Output:
+## Logic symbol & Truthtable
+## HALF ADDER
 ![3 half](https://user-images.githubusercontent.com/118680259/233821052-11a02f36-7b28-4be0-86b1-3b1229aea230.png)
-FULL ADDER
+## FULL ADDER
 ![3 full](https://user-images.githubusercontent.com/118680259/233821060-b5f93657-c770-4ba1-b3c7-8d7458827c73.png)
 
-RTL realization
-HALF ADDER
+## RTL realization
+## HALF ADDER
 ![3 rtl half](https://user-images.githubusercontent.com/118680259/233821094-bde94414-1deb-4b3e-8afe-a45ac1c275d0.png)
-FULL ADDER
+## FULL ADDER
+![3 rtl full](https://user-images.githubusercontent.com/118680259/233821215-4eeea36c-6e4e-43a8-93ec-bda95ee3f7e6.png)
 
-### Output:
+
 ### RTL
 ### TIMING DIAGRAM
-HALF ADDER
-
-
-### TRUTH TABLE 
-
+## HALF ADDER
+![timing half](https://user-images.githubusercontent.com/118680259/233821221-84041234-2591-4fb6-8cfd-a1a5579c5f4a.png)
+## FULL ADDER
+![timing full](https://user-images.githubusercontent.com/118680259/233821230-720ea32f-6f16-4bbb-8f4d-8ac8aa95241f.png)
 ### Result:
+Thus,the Implementation of Half Adder and Full Adder circuit are studied and the truth table for different logic gates are verified.
